@@ -9,6 +9,12 @@ const maxPoints = 10;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   points.push(new Point());
+  while (points.length < maxPoints) {
+    let point = new Point();
+    let preState = points[points.length - 1].state;
+    point.update(preState.x, preState.y, preState.z);
+    points.push(point);
+  }
   strokeWeight(5);
   background(0);
   noFill();
@@ -23,7 +29,7 @@ function draw() {
   point.update(preState.x, preState.y, preState.z);
   points.push(point);
   show(points);
-  if (points.length > maxPoints) {
+  while (points.length > maxPoints) {
     points.shift();
   }
 }
