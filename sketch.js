@@ -1,10 +1,11 @@
-const scale = 10;
+const scale = 10; // how much the points are scaled up or down
 const rho = 28;
 const segma = 10;
 const beta = 8/3;
 let points = [];
-const dt = 0.01;
-const maxPoints = 10;
+const dt = 0.01; // time scale
+const maxPoints = 10; // max number of points to be drawn in eachframe
+const trailEffect = 40; // 0-255 where 0 is the most trail and 255 no trail
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -23,7 +24,7 @@ function setup() {
 
 function draw() {
   colorMode(RGB);
-  background(0, 100);
+  background(0, trailEffect);
   translate(width/2, height/2);
   let point = new Point();
   let preState = points[points.length - 1].state;
