@@ -8,6 +8,7 @@ const maxPoints = 10;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  noCursor();
   points.push(new Point());
   while (points.length < maxPoints) {
     let point = new Point();
