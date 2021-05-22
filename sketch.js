@@ -43,3 +43,11 @@ show = (points) => {
   }
   endShape();
 }
+
+windowResized = () => {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
+mousePressed = () => {
+  fullscreen(!fullscreen());
+}
